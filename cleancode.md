@@ -77,3 +77,70 @@ switch문은 되도록 피해야 함. 사용해야 한다면, 상속 구조에�
 
 코드 중복을 피해야 함. 중복은 유지보수와 수정 시 문제를 일으킬 수 있음.
 
+
+## Chapter 4 : Comments
+
+### 1. Comments Do Not Make Up for Bad Code
+- **나쁜 코드를 주석으로 설명하지 말고**, 코드를 정리해서 주석이 필요 없도록 만듦.
+
+### 2. Explain Yourself in Code
+- 주석을 대신해 **코드로 의도를 표현**하는 것이 더 나음.
+
+### 3. Good Comments
+- 좋은 주석은 몇 가지 경우에만 필요함:
+  - **Legal Comments**: 법적 요구사항을 위한 주석.
+  - **Informative Comments**: 정보 제공용 주석 (예: 함수의 반환 값 설명).
+  - **Explanation of Intent**: 코드 작성 의도를 설명하는 주석.
+  - **Clarification**: 복잡한 인자나 반환 값을 명확히 하는 주석.
+  - **Warning of Consequences**: 특정 결과를 경고하는 주석.
+  - **TODO Comments**: 나중에 해결할 작업을 나타내는 주석.
+  - **Amplification**: 중요한 부분을 강조하는 주석.
+  - **Javadocs in Public APIs**: 공개 API를 위한 주석.
+
+### 4. Bad Comments
+- 나쁜 주석은 코드를 어지럽히고 오해를 불러일으킴:
+  - **Mumbling**: 애매한 주석.
+  - **Redundant Comments**: 불필요하게 반복되는 주석.
+  - **Misleading Comments**: 잘못된 정보를 제공하는 주석.
+  - **Mandated Comments**: 의무적으로 작성된 무의미한 주석.
+  - **Journal Comments**: 코드 변경 내역을 기록하는 주석.
+  - **Noise Comments**: 불필요한 정보를 제공하는 주석.
+  - **Scary Noise**: 코드에 혼란을 주는 주석.
+  - **Don’t Use a Comment When You Can Use a Function or a Variable**: 주석 대신 변수나 함수로 표현할 수 있는 경우, 주석 사용을 피함.
+  - **Position Markers**: 의미 없는 위치 표시 주석.
+  - **Closing Brace Comments**: 중괄호 닫힘을 표시하는 주석.
+  - **Attributions and Bylines**: 누가 작성했는지 표시하는 주석.
+  - **Commented-Out Code**: 주석 처리된 코드.
+  - **HTML Comments**: 코드에 HTML 태그를 사용하는 주석.
+  - **Nonlocal Information**: 코드와 관련 없는 시스템 정보가 포함된 주석.
+  - **Too Much Information**: 필요 이상의 정보를 제공하는 주석.
+  - **Inobvious Connection**: 코드와 주석 간 연결이 명확하지 않은 주석.
+  - **Function Headers**: 짧은 함수에 불필요한 주석.
+  - **Javadocs in Nonpublic Code**: 비공개 코드에 작성된 Javadoc 주석.
+
+
+## Chapter 7 : Error Handling
+
+### 1. Use Exceptions Rather Than Return Codes
+- 오류를 반환 코드 대신 **예외로 처리**해야 코드가 더 간결하고 가독성이 높아짐.
+
+### 2. Write Your Try-Catch-Finally Statement First
+- **try-catch-finally** 블록을 먼저 작성해 오류 처리 경계를 명확히 정의함.
+
+### 3. Use Unchecked Exceptions
+- **Unchecked 예외**를 사용해 코드의 캡슐화를 깨지 않도록 함.
+
+### 4. Provide Context with Exceptions
+- 예외에는 충분한 **맥락**(실패한 작업과 그 이유)을 제공해 문제를 파악할 수 있도록 함.
+
+### 5. Define Exception Classes in Terms of a Caller’s Needs
+- 호출자가 처리하기 쉽게 **예외 클래스를 정의**해 중복된 코드를 줄임.
+
+### 6. Define the Normal Flow
+- 예외를 줄이기 위해 **정상적인 흐름**을 처리하는 코드를 단순화함.
+
+### 7. Don’t Return Null
+- **null을 반환하지 않음**. 대신 특별한 객체를 반환하거나 예외를 던짐.
+
+### 8. Don’t Pass Null
+- **null을 함수 인자로 넘기지 않음**. null을 받으면 오류 발생 가능성이 높아짐.
